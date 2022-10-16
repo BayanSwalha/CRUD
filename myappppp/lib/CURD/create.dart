@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myappppp/CURD/read.dart';
 import 'package:myappppp/model.dart';
 
 class Additem1 extends StatefulWidget {
@@ -29,6 +30,11 @@ class _Additem1State extends State<Additem1> {
                   await Database.addItem(item: item1.text, value: value1.text);
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text("item created")));
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return ListPage();
+                },
+              ));
             },
             child: Text(
               "Add item",

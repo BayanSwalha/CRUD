@@ -1,13 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final docItemm = FirebaseFirestore.instance;
-CollectionReference itemsAndValue = docItemm.collection('items');
+CollectionReference itemsAndValue = docItemm.collection('item1');
 
 class ListOfItems {
   String? item;
   String? value;
-
-  ListOfItems({required this.item, required this.value});
 }
 
 class Database {
@@ -24,7 +22,7 @@ class Database {
       "value": value,
     };
 
-    await documentReferencer
+    var result = await documentReferencer
         .set(data)
         .whenComplete(() => print("Note item added to the database"))
         .catchError((e) => print(e));
