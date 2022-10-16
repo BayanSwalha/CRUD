@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myappppp/firebase_options.dart';
 
-import 'CURD/read.dart';
 import 'LogIn.dart/login.dart';
 
 Future<void> main() async {
@@ -21,6 +20,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListPage();
+    return LogIn();
   }
 }
